@@ -1,5 +1,5 @@
 Package: copulafa
-Title: Copula-Based Factor Analysis
+Title: Copula Factor Analysis
 Version: 0.0.1
 Authors@R: 
     person(given = "Gregor",
@@ -11,10 +11,7 @@ License: GPL (>=3)
 Depends: 
     methods,
     R (>= 3.4.0),
-    Rcpp (>= 1.0.0),
-    rstan (>= 2.18.2),
-    rstantools (>= 1.5.1),
-    dplyr (>= 0.7.0)
+    Rcpp (>= 1.0.0)
 LinkingTo: 
     BH (>= 1.69.0-1),
     Rcpp (>= 1.0.0),
