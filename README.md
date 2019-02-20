@@ -12,14 +12,14 @@ needs to compile the models in C++ so a compiler is required.
 
 ```{r eval = FALSE}
 library(devtools)
-devtools::install_github("gregorp90/RStan-package-test")
+devtools::install_github("bstatcomp/copulafa")
 ``` 
 
 You may have trouble installing the 32-bit and 64-bit versions on Windows. In 
 that case only install one version with
 
 ```{r eval = FALSE}
-devtools::install_github("gregorp90/RStan-package-test", INSTALL_opts = c("--no-multiarch"))
+devtools::install_github("bstatcomp/copulafa", INSTALL_opts = c("--no-multiarch"))
 ``` 
 
 which will automatically install the arch that is used in your current RStudio

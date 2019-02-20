@@ -26,7 +26,7 @@ pred_gFA <- function (tr_fa, gp_test, test, logl = T, L_intg = F) {
   gp_score <- aggregate(gp_score[ ,-1], by = list(gp_score$group), FUN = mean)
   gp_uniq     <- unique(gp_score)
   colnames(gp_uniq)[1] <- "group"
-  pr_factors  <- join(data.frame(group = gp_test), gp_uniq, by = "group")
+  pr_factors  <- left_join(data.frame(group = gp_test), gp_uniq, by = "group")
   if (anyNA(pr_factors)) {
     ind                 <- apply(is.na(pr_factors), 1, sum)
     ind[ind != 0]       <- 1

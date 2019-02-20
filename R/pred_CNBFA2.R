@@ -24,8 +24,8 @@ pred_CNBFA2 <- function (tr_fa, gp_test, test, logl = TRUE) {
   gp_size     <- data.frame(group = gpt, size = size)
   colnames(gp_mu)[1]   <- "group"
   colnames(gp_size)[1] <- "group"
-  pr_mu         <- join(data.frame(group = gp_test), gp_mu, by = "group")
-  pr_size     <- join(data.frame(group = gp_test), gp_size, by = "group")
+  pr_mu       <- left_join(data.frame(group = gp_test), gp_mu, by = "group")
+  pr_size     <- left_join(data.frame(group = gp_test), gp_size, by = "group")
   if (anyNA(pr_mu)) {
     ind                 <- apply(is.na(pr_mu), 1, sum)
     ind[ind != 0]       <- 1
@@ -43,11 +43,11 @@ pred_CNBFA2 <- function (tr_fa, gp_test, test, logl = TRUE) {
     sizes1   <- as.numeric(pr_size[i, -1])
     mus1     <- as.numeric(pr_mu[i, -1])
     predictions[i, ] <- mus1
-    log_lik[i]       <- L_NBFA_approx(test[i,],
-                                      sizes1,
-                                      mus1,
-                                      tr_fa$Sigma,
-                                      logl = logl)
+    log_lik[i]       <- L_CNBFA_approx(test[i,],
+                                       sizes1,
+                                       mus1,
+                                       tr_fa$Sigma,
+                                       logl = logl)
   }
   return (list(predictions = predictions,
                likelihoods = log_lik))
