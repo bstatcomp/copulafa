@@ -1,0 +1,28 @@
+Package: copulafa
+Title: Copula-Based Factor Analysis
+Version: 0.0.1
+Authors@R: 
+    person(given = "Gregor",
+           family = "Pirs",
+           role = c("aut", "cre"),
+           email = "gregor.pirs@fri.uni-lj.si")
+Description: The package contains several factor analysis methods, with emphasis to count data. The main methods rely on copulas to estimate the residual covariance, not explained by the latent structure. Additionally, the package contains four data sets for empirical evaluation and one baseline model. The methods use RStan for inference, the only exception is the iPoiss method where we use conjugate posterior.
+License: GPL (>=3)
+Depends: 
+    methods,
+    R (>= 3.4.0),
+    Rcpp (>= 1.0.0)
+Imports: 
+    rstan (>= 2.18.2),
+    rstantools (>= 1.5.1)
+LinkingTo: 
+    BH (>= 1.69.0-1),
+    Rcpp (>= 1.0.0),
+    RcppEigen (>= 0.3.3.5.0),
+    rstan (>= 2.18.2),
+    StanHeaders (>= 2.18.1)
+Encoding: UTF-8
+LazyData: true
+NeedsCompilation: yes
+SystemRequirements: GNU make
+RoxygenNote: 6.0.1
