@@ -42,7 +42,7 @@ train_CPFA <- function (train, gp_train, nfac = 2, ...) {
   gp_score    <- data.frame(group = unique(gp_train), scores = t(factors))
   gp_uniq     <- unique(gp_score)
   colnames(gp_uniq)[1] <- "group"
-  pr_factors  <- join(data.frame(group = gp_train), gp_uniq, by = "group")
+  pr_factors  <- left_join(data.frame(group = gp_train), gp_uniq, by = "group")
   thetas      <- pr_factors[ ,-1]
   thetas      <- t(lambda %*% t(thetas))
   X_lat       <- thetas

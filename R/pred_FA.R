@@ -45,5 +45,5 @@ pred_FA <- function (tr_fa, gp_test, test, logl = T, L_intg = F) {
   log_lik     <- likelihood_cl(test, predictions, tr_fa, logl,
                                integrate = L_intg)
   return (list(predictions = predictions,
-               log_lik     = log_lik))
+               likelihoods = log_lik))
 }
